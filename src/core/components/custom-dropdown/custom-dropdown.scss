@@ -1,0 +1,68 @@
+@import '../../sass/variables';
+.custom-dropdown {
+  width: 100%;
+  user-select: none;
+  text-align: start;
+  position: relative;
+  font-size: 1.8rem;
+
+  &__label-and-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    &__label {
+      font-size: 2rem;
+      color: $grey;
+      font-weight: 500;
+    }
+
+    &__icon {
+      width: 1.7rem;
+      margin-left: 0.6rem;
+      fill: #545454;
+    }
+  }
+
+  .custom-ropdown-btn {
+    padding: 1.1rem 1.3rem;
+    outline: none;
+    border-radius: $border-radius;
+    border: 0.1rem solid $primary;
+    width: 100%;
+    margin-bottom: $margin;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+
+    .down-arrow {
+      width: 1.6rem;
+      height: 1.6rem;
+      fill: $dark-grey;
+      transition: all 0.3s;
+      margin-top: 0.4rem;
+    }
+  }
+  .custom-ropdown-content {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    padding: 0.5rem;
+    background-color: $white;
+    width: 100%;
+    z-index: 2;
+    border-radius: $border-radius;
+    border: 0.1rem solid $primary;
+
+    .custom-ropdown-item {
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: rgba($primary, 0.15);
+      }
+    }
+  }
+}

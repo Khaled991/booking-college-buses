@@ -1,0 +1,29 @@
+@import '../../sass/variables';
+
+.navs {
+  font-size: 2.1rem;
+  font-weight: 500;
+  border: 0.1rem solid $primary;
+  padding: 0.6rem;
+  border-radius: $border-radius;
+  margin-bottom: $margin;
+  .nav-pills {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .nav-link {
+      width: 33%;
+      color: $dark-grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-link.active {
+      color: $white;
+      background-color: $primary;
+      padding: 0.7rem 1rem;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
-@import './variables';
+@import 'variables';
 
 *,
 *::after,
@@ -22,17 +22,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  // color: $dark-grey;
 }
 
 a {
-  // color: $dark-grey;
   text-decoration: none;
 }
-// .root-content {
-//   &__pages {
-//     min-height: 100vh;
-//     padding-top: 11.75rem;
-//   }
+
+// .routes {
+//   margin-top: 9.2rem;
+//   min-height: calc(100vh - 92px);
 // }
