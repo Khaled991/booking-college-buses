@@ -1,0 +1,35 @@
+@import '../../sass/variables';
+
+.navbar {
+  border-bottom: 0.2rem solid rgba($primary, 0.5);
+  .header {
+    padding: 1rem 4rem;
+
+    .inactive {
+      display: flex;
+      margin: 0 1rem;
+      color: $dark-grey;
+      font-size: 1.7rem;
+      text-decoration: none;
+      font-weight: 500;
+      .icon {
+        margin-right: 0.8rem;
+        fill: $dark-grey;
+        width: 2rem;
+      }
+      &:hover {
+        color: $primary;
+        .icon {
+          fill: $primary;
+        }
+      }
+    }
+    .active {
+      color: $primary;
+      text-decoration: none;
+      .icon {
+        fill: $primary;
+      }
+    }
+  }
+}

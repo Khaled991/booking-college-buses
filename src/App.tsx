@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ReactElement, lazy, Suspense } from 'react';
+import { Container } from 'react-bootstrap';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/header/header';
 
-function App() {
+import Logo from './assets/images/logo.webp';
+import { ReactComponent as SignIn } from './assets/icons/sign-in.svg';
+
+const Home = lazy(() => import('./pages/Home/Home'));
+
+const App = (): ReactElement => {
+  const navs = [
+    {
+      path: '/sign-in',
+      navName: 'تسجيل الدخول',
+      Icon: SignIn,
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header logo={Logo} navs={navs} logoHeight={'6rem'} />
+      <Container fluid>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Suspense>
+      </Container>
     </div>
   );
-}
+};
 
 export default App;
