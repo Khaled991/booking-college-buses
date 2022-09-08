@@ -25,7 +25,7 @@ const CustomButton = ({
   return (
     <button className={`custom-button ${color}`} {...props}>
       {text}
-      {Icon ? <Icon className="icon" /> : <></>}
+      {Icon && <Icon className="icon" />}
     </button>
   );
 };

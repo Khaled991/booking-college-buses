@@ -9,12 +9,11 @@ const BookingForm = (): ReactElement => {
   return (
     <>
       <CustomForm
+        onClick={() => {}}
         Icon={Ticket}
         title="احجز أتوبيسك"
         maxWidth="70%"
-        minHeight="70%"
         buttontext="احجز الآن"
-        showButton={true}
       >
         <Navs
           navs={forms.map(({ title, eventKey }) => ({ title, eventKey }))}

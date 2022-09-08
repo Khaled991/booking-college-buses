@@ -1,35 +1,36 @@
-import { ReactElement } from 'react';
-import { Row, Col } from 'react-bootstrap';
-import CustomButton, {
-  ButtonColor,
-} from '../../../../core/components/customButton/customButton';
-import CustomInput from '../../../../core/components/customInput/customInput';
-import { signUpForm } from './sign-up-form.data';
-// import { ReactComponent as LeftArrow } from '../../../../assets/icons/left-arrow.svg';
+import { ReactElement, useRef } from 'react';
 
 import './sign-up-form.scss';
+import AuthForm from '../auth-form/auth-form';
+import useSteps, { StepHandler } from '../../../../core/hook/use-steps';
+import signUpSteps from './sign-up-steps/sign-up-steps';
+import { Row } from 'react-bootstrap';
 
 const SignUpForm = (): ReactElement => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const { step, nextStep, previousStep }: StepHandler = useSteps(1);
+  // const [signUpValues, setSignUpValues] = useFormInputs();
+
+  const onSubmitForm = () => {};
+
   return (
-    <div>
+    <AuthForm
+      ref={formRef}
+      title="إنشاء حساب"
+      titlePosition="center"
+      maxWidth="35%"
+      onSubmit={onSubmitForm}
+    >
       <Row>
-        {signUpForm.map(({ ...props }, i) => (
-          <Col md={6}>
-            <CustomInput required {...props} key={i} />
-          </Col>
-        ))}
+        {signUpSteps({
+          step,
+          previousStep,
+          nextStep: () => {
+            if (formRef.current?.checkValidity()) nextStep();
+          },
+        })}
       </Row>
-      <CustomButton
-        onClick={() => {}}
-        text="التالي"
-        // Icon={LeftArrow}
-        type="submit"
-        color={ButtonColor.primary}
-      />
-      <h3 className="sign-in-sign-up-buttontext">
-        هل لديك حساب؟ <span>سجل الدخول</span>
-      </h3>
-    </div>
+    </AuthForm>
   );
 };
 

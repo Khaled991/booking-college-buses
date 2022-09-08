@@ -10,35 +10,10 @@
   width: 100%;
   justify-content: center;
 
-  .logo {
-    display: flex;
-    width: 100%;
-    margin-bottom: $margin;
-  }
-
   &__title {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: $margin;
-  }
-  .sign-in-sign-up-buttontext {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    font-size: 1.8rem;
-    & > * {
-      color: $primary;
-      margin-right: 0.5rem;
-      cursor: pointer;
-      &:hover {
-        transition: 0.5s;
-        color: $primary-opacity;
-      }
-      &:active {
-        color: $primary;
-      }
-    }
   }
 }
 

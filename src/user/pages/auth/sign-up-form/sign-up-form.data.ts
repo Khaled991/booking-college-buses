@@ -4,8 +4,10 @@ import { ReactComponent as Phone } from '../../../../assets/icons/phone.svg';
 import { ReactComponent as Whatsapp } from '../../../../assets/icons/whatsapp.svg';
 import { ReactComponent as CollegeEmail } from '../../../../assets/icons/college-email.svg';
 import { ReactComponent as College } from '../../../../assets/icons/college.svg';
+import { ReactComponent as Home } from '../../../../assets/icons/home.svg';
+import { ICustomInputProps } from '../../../../core/components/customInput/customInput';
 
-export const signUpForm = [
+export const signUpFormInputs: ICustomInputProps[] = [
   {
     label: 'الاسم',
     Icon: User,
@@ -23,14 +25,14 @@ export const signUpForm = [
     Icon: Phone,
     placeholder: '01xxxxxxxxxx',
     type: 'text',
-    maxlength: '11',
+    maxLength: 11,
   },
   {
     label: 'واتساب',
     Icon: Whatsapp,
     placeholder: '01xxxxxxxxxx',
     type: 'text',
-    maxlength: '11',
+    maxLength: 11,
   },
   {
     label: 'الكلية',
@@ -40,7 +42,7 @@ export const signUpForm = [
   },
   {
     label: 'العنوان',
-    Icon: College,
+    Icon: Home,
     placeholder: 'العنوان',
     type: 'text',
   },

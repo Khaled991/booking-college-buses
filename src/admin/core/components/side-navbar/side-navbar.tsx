@@ -21,8 +21,8 @@ const SideNavbar = ({ navs }: ISideNavbarProps): ReactElement => {
         <img src={Logo} alt="logo" className="logo" />
       </NavLink>
       <ul className="nav-links">
-        {navs.map(({ title, path, Icon }) => (
-          <li>
+        {navs.map(({ title, path, Icon }, i) => (
+          <li key={i}>
             <NavLink className="nav-item" to={path}>
               <Icon className="nav-item__icon" />
               <span>{title}</span>

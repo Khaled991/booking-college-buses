@@ -1,7 +1,7 @@
 import { ReactElement, useState } from 'react';
 import './custom-dropdown.scss';
 import { ReactComponent as DownArrow } from '../../../assets/icons/left-arrow.svg';
-import useComponentVisible from '../../../core/hook/useComponentVisible';
+import useComponentVisible from '../../hook/use-component-visible';
 import SVG from '../../types/svg.type';
 
 interface ICustomDropdownProps {

@@ -6,8 +6,13 @@ import './sign-in-form.scss';
 import CustomButton, {
   ButtonColor,
 } from '../../../../core/components/customButton/customButton';
+import { useNavigate } from 'react-router-dom';
+import AppRoutes from '../../../../core/constants/routes';
+import AuthForm from '../auth-form/auth-form';
 
 const SignInForm = (): ReactElement => {
+  const navigate = useNavigate();
+
   const input = [
     {
       label: 'الاسم',
@@ -23,10 +28,17 @@ const SignInForm = (): ReactElement => {
     },
   ];
   return (
-    <div>
-      {input.map(({ ...props }, i) => (
-        <CustomInput required {...props} key={i} />
-      ))}
+    <AuthForm
+      title="تسجيل الدخول"
+      titlePosition="center"
+      maxWidth="26%"
+      onSubmit={() => {}}
+    >
+      <>
+        {input.map((props, i) => (
+          <CustomInput required {...props} key={i} />
+        ))}
+      </>
       <CustomButton
         text="تسجيل الدخول"
         onClick={() => {}}
@@ -34,9 +46,12 @@ const SignInForm = (): ReactElement => {
         color={ButtonColor.primary}
       />
       <h3 className="sign-in-sign-up-buttontext">
-        ليس لديك حساب؟ <span>إنشاء حساب</span>
+        ليس لديك حساب؟{' '}
+        <span onClick={() => navigate(`${AppRoutes.auth}/${AppRoutes.signUp}`)}>
+          إنشاء حساب
+        </span>
       </h3>
-    </div>
+    </AuthForm>
   );
 };
 

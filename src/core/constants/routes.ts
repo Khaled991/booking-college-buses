@@ -4,4 +4,5 @@ export default class AppRoutes {
 
   static signIn: string = `sign-in`;
   static signUp: string = `sign-up`;
+  static timeTable: string = `time-table`;
 }
