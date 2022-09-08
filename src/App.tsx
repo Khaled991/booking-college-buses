@@ -4,10 +4,11 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './core/components/header/header';
 import Logo from './assets/images/logo.webp';
 import { ReactComponent as SignIn } from './assets/icons/sign-in.svg';
+import AppRoutes from './core/constants/routes';
 
-const Home = lazy(() => import('./pages/home/home'));
-const Auth = lazy(() => import('./pages/auth/auth'));
-const Admin = lazy(() => import('./pages/admin/admin'));
+const Home = lazy(() => import('./user/pages/home/home'));
+const Auth = lazy(() => import('./user/pages/auth/auth'));
+const Admin = lazy(() => import('./admin/admin'));
 
 interface userAndAmin {
   marginTop: string;
@@ -19,7 +20,7 @@ const App = (): ReactElement => {
 
   const navs = [
     {
-      path: '/auth',
+      path: `${AppRoutes.auth}/${AppRoutes.signIn}`,
       navName: 'تسجيل الدخول',
       Icon: SignIn,
     },
@@ -35,22 +36,18 @@ const App = (): ReactElement => {
     minHeight: '100vh',
   };
 
-  const userPath = pathname !== '/admin';
+  const userPath = pathname.includes('/admin');
 
   return (
     <div className="App">
-      {userPath ? (
-        <Header logo={Logo} navs={navs} logoHeight={'6rem'} />
-      ) : (
-        <></>
-      )}
-      <div style={userPath ? user : admin}>
+      {!userPath && <Header logo={Logo} navs={navs} logoHeight={'6rem'} />}
+      <div style={!userPath ? user : admin}>
         <Container fluid>
           <Suspense fallback={<h1>Loading...</h1>}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/auth" element={<Auth />} />
-              <Route path="/admin" element={<Admin />} />
+              <Route path={`${AppRoutes.auth}/*`} element={<Auth />} />
+              <Route path={`${AppRoutes.admin}/*`} element={<Admin />} />
             </Routes>
           </Suspense>
         </Container>

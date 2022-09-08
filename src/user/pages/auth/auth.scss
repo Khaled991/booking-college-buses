@@ -1,0 +1,18 @@
+@import '../../../core/sass/variables';
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 90.3vh;
+  // position: relative;
+  // .background-shape {
+  //   position: absolute;
+  //   bottom: 0;
+  //   height: 50%;
+  //   width: 100%;
+  //   background-color: $primary;
+  //   z-index: -1;
+  // }
+}

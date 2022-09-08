@@ -10,9 +10,10 @@ interface IForm {
   maxWidth: string;
   minHeight?: string;
   onClick?: () => void;
-  buttontext: string;
+  buttontext?: string;
   Icon?: SVG;
   children: JSX.Element[] | JSX.Element;
+  showButton: boolean;
 }
 
 type titlePosition = 'center' | 'left' | 'right';
@@ -27,6 +28,7 @@ const CustomForm = ({
   buttontext,
   Icon,
   children,
+  showButton,
 }: IForm): ReactElement => {
   return (
     <div className="form" style={{ maxWidth: maxWidth, minHeight: minHeight }}>
@@ -44,17 +46,16 @@ const CustomForm = ({
 
       <form>
         {children}
-        <CustomButton
-          onClick={onClick}
-          text={buttontext}
-          Icon={Icon}
-          type="submit"
-          color={ButtonColor.primary}
-        />
+        {showButton && (
+          <CustomButton
+            onClick={onClick}
+            text={buttontext!}
+            Icon={Icon}
+            type="submit"
+            color={ButtonColor.primary}
+          />
+        )}
       </form>
-      {/* <h3 className="sign-in-sign-up-buttontext">
-        ليس لديك حساب؟ <span>إنشاء حساب</span>
-      </h3> */}
     </div>
   );
 };

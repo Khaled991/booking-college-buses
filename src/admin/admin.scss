@@ -1,0 +1,21 @@
+@import '../core/sass/variables';
+
+.admin {
+  width: 100%;
+  height: 100vh;
+  background-color: $white-2;
+  display: flex;
+  font-size: 2rem;
+  .routes {
+    margin-right: 28rem;
+    width: calc(100vh - 28rem);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .admin {
+    .routes {
+      margin-right: 15rem;
+      width: calc(100vh - 15rem);
+    }
+  }
+}

@@ -12,12 +12,9 @@ interface ICustomInputProps
 }
 
 const CustomInput = ({
-  placeholder,
-  type,
-  name,
-  onChange,
   label,
   Icon,
+  ...props
 }: ICustomInputProps): ReactElement => {
   return (
     <div className="custom-input-container">
@@ -27,13 +24,7 @@ const CustomInput = ({
           {label}
         </label>
       </div>
-      <input
-        className="custom-input-container__custom-input"
-        placeholder={placeholder}
-        type={type}
-        name={name}
-        onChange={onChange}
-      />
+      <input className="custom-input-container__custom-input" {...props} />
     </div>
   );
 };
