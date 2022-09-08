@@ -11,17 +11,18 @@ interface IOneDirectionFormProps extends IDestinationVisualizationProps {}
 const OneDirectionForm = (
   oneDirectionFormProps: IOneDirectionFormProps
 ): ReactElement => {
-  const items = ['sdafas', 'safsagsa'];
+  const date = ['02-09-2022', '03-09-2022'];
+  const time = ['08:05', '08:15'];
 
   return (
     <>
       <LeavingPointFormInputs {...oneDirectionFormProps} />
       <Row>
         <Col>
-          <CustomDropdown item={items} label="تاريخ التحرك" Icon={Date} />
+          <CustomDropdown item={date} label="تاريخ التحرك" Icon={Date} />
         </Col>
         <Col>
-          <CustomDropdown item={items} label="وقت التحرك" Icon={Time} />
+          <CustomDropdown item={time} label="وقت التحرك" Icon={Time} />
         </Col>
       </Row>
     </>

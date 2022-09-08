@@ -6,24 +6,25 @@ import { Row, Col } from 'react-bootstrap';
 import LeavingPointFormInputs from './leaving-point-form-inputs';
 
 const TwoDirectionForm = (): ReactElement => {
-  const items = ['sdafas', 'safsagsa'];
+  const date = ['02-09-2022', '03-09-2022'];
+  const time = ['08:05', '08:15'];
 
   return (
     <>
       <LeavingPointFormInputs direction="goAndBack" />
-      <CustomDropdown label="تاريخ التحرك" item={items} Icon={Date} />
+      <CustomDropdown label="تاريخ التحرك" item={date} Icon={Date} />
       <Row>
         <Col>
           <CustomDropdown
             label="وقت التحرك من المحطة"
-            item={items}
+            item={time}
             Icon={Time}
           />
         </Col>
         <Col>
           <CustomDropdown
             label="وقت الذهاب من الجامعة"
-            item={items}
+            item={time}
             Icon={Time}
           />
         </Col>

@@ -12,14 +12,15 @@ interface ILeavingPointFormInputsProps extends IDestinationVisualizationProps {}
 const LeavingPointFormInputs = (
   leavingPointFormInputsProps: ILeavingPointFormInputsProps
 ): ReactElement => {
-  const items = ['sdafas', 'safsagsa'];
+  const items = ['التجمع الخامس', 'التجمع الأول'];
+  const items2 = ['شارع التسعين', 'التجمع الأول'];
 
   return (
     <>
       <CustomDropdown item={items} label="المنطقة" Icon={Location} />
       <Row>
         <Col>
-          <CustomDropdown item={items} label="المحطة" Icon={Station} />
+          <CustomDropdown item={items2} label="المحطة" Icon={Station} />
         </Col>
         <DestinationVisualization {...leavingPointFormInputsProps} />
       </Row>
