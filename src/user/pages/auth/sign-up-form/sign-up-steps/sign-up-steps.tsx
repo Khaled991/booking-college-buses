@@ -11,8 +11,8 @@ const signUpSteps = ({
 }: ISignUpStepsParams): JSX.Element => {
   const index = step - 1;
   return [
-    <SignUpStep2 previousStep={previousStep} />,
     <SignUpStep1 nextStep={nextStep} />,
+    <SignUpStep2 previousStep={previousStep} />,
   ][index];
 };
 export default signUpSteps;
